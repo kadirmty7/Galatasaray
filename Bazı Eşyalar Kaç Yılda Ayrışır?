@@ -1,0 +1,25 @@
+# Eşyaların doğada ayrışma süreleri (yıllar bazında)
+esya_ayrisma_sureleri = {
+    "plastik şişe": 450,
+    "cam şişe": 1000,
+    "alüminyum kutu": 80,
+    "gazete": 6,
+    "karton": 2,
+    "plastik poşet": 10-1000,
+    "köpük bardak": 50,
+    "muz kabuğu": 2-5 hafta,
+    "pamuklu tişört": 6 ay,
+    "ahşap mobilya": 10-15,
+}
+
+# Botun yanıt vermesi için bir fonksiyon
+def bot_cevap_ver(esya):
+    esya = esya.lower()  # Büyük/küçük harf duyarlılığını kaldırıyoruz
+    if esya in esya_ayrisma_sureleri:
+        return f"{esya} doğada ortalama olarak {esya_ayrisma_sureleri[esya]} yıl/yıl arası ayrışır."
+    else:
+        return f"Üzgünüm, {esya} hakkında elimde bilgi yok."
+
+# Kullanıcıdan giriş alalım ve yanıt verelim
+esya = input("Hangi ev eşyasının doğada ne kadar sürede ayrıştığını öğrenmek istersiniz? ")
+print(bot_cevap_ver(esya))
